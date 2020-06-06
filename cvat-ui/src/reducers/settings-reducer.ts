@@ -19,8 +19,8 @@ import {
 const defaultState: SettingsState = {
     shapes: {
         colorBy: ColorBy.INSTANCE,
-        opacity: 3,
-        selectedOpacity: 30,
+        opacity: 25,
+        selectedOpacity: 40,
         blackBorders: false,
         showBitmap: false,
         showProjections: false,
