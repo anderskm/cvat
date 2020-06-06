@@ -150,11 +150,11 @@ export default function ControlsSideBarComponent(props: Props): JSX.Element {
                 activeControl={activeControl}
             />
             <MoveControl canvasInstance={canvasInstance} activeControl={activeControl} />
-            <RotateControl
+            {/* <RotateControl
                 anticlockwiseShortcut={normalizedKeyMap.ANTICLOCKWISE_ROTATION}
                 clockwiseShortcut={normalizedKeyMap.CLOCKWISE_ROTATION}
                 rotateFrame={rotateFrame}
-            />
+            /> */}
 
             <hr />
 
