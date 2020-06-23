@@ -188,7 +188,7 @@ export default function ControlsSideBarComponent(props: Props): JSX.Element {
                 isDrawing={false}
             /> */}
 
-            <hr />
+            {/* <hr />
 
             <MergeControl
                 switchMergeShortcut={normalizedKeyMap.SWITCH_MERGE_MODE}
@@ -207,7 +207,7 @@ export default function ControlsSideBarComponent(props: Props): JSX.Element {
                 canvasInstance={canvasInstance}
                 activeControl={activeControl}
                 splitTrack={splitTrack}
-            />
+            /> */}
         </Layout.Sider>
     );
 }
