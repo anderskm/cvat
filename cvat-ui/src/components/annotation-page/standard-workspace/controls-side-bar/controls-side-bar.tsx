@@ -167,11 +167,11 @@ export default function ControlsSideBarComponent(props: Props): JSX.Element {
                 canvasInstance={canvasInstance}
                 isDrawing={activeControl === ActiveControl.DRAW_RECTANGLE}
             />
-            {/* <DrawPolygonControl
+            <DrawPolygonControl
                 canvasInstance={canvasInstance}
                 isDrawing={activeControl === ActiveControl.DRAW_POLYGON}
             />
-            <DrawPolylineControl
+            {/* <DrawPolylineControl
                 canvasInstance={canvasInstance}
                 isDrawing={activeControl === ActiveControl.DRAW_POLYLINE}
             />
