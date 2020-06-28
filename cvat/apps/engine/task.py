@@ -325,7 +325,6 @@ def _create_thread(tid, data):
     _save_task_to_db(db_task)
 
     job = rq.get_current_job()
-    job.meta['status'] = 'Removing local copy of share...'
+    job.meta['status'] = 'Removing local "raw" copy of images...'
     job.save_meta()
-    time.sleep(5.0)
-    # shutil.rmtree(upload_dir)
+    shutil.rmtree(upload_dir)
