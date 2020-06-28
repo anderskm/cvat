@@ -260,10 +260,10 @@ def _create_thread(tid, data):
         update_progress.call_counter = (update_progress.call_counter + 1) % len(progress_animation)
 
     compressed_chunk_writer_class = Mpeg4CompressedChunkWriter if db_data.compressed_chunk_type == DataChoice.VIDEO else ZipCompressedChunkWriter
-    original_chunk_writer_class = Mpeg4ChunkWriter if db_data.original_chunk_type == DataChoice.VIDEO else ZipChunkWriter
+    #original_chunk_writer_class = Mpeg4ChunkWriter if db_data.original_chunk_type == DataChoice.VIDEO else ZipChunkWriter
 
     compressed_chunk_writer = compressed_chunk_writer_class(db_data.image_quality)
-    original_chunk_writer = original_chunk_writer_class(100)
+    #original_chunk_writer = original_chunk_writer_class(100)
 
     # calculate chunk size if it isn't specified
     if db_data.chunk_size is None:
@@ -281,8 +281,8 @@ def _create_thread(tid, data):
     generator = itertools.groupby(extractor, lambda x: next(counter) // db_data.chunk_size)
     for chunk_idx, chunk_data in generator:
         chunk_data = list(chunk_data)
-        original_chunk_path = db_data.get_original_chunk_path(chunk_idx)
-        original_chunk_writer.save_as_chunk(chunk_data, original_chunk_path)
+        #original_chunk_path = db_data.get_original_chunk_path(chunk_idx)
+        #original_chunk_writer.save_as_chunk(chunk_data, original_chunk_path)
 
         compressed_chunk_path = db_data.get_compressed_chunk_path(chunk_idx)
         img_sizes = compressed_chunk_writer.save_as_chunk(chunk_data, compressed_chunk_path)
