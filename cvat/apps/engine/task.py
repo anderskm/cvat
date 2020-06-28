@@ -49,7 +49,7 @@ def rq_handler(job, exc_type, exc_value, traceback):
 
 def _copy_data_from_share(server_files, upload_dir):
     job = rq.get_current_job()
-    job.meta['status'] = 'Data are being copied from share..'
+    job.meta['status'] = 'Data are being copied from share... (' + upload_dir + ')'
     job.save_meta()
 
     for path in server_files:
