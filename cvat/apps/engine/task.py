@@ -8,6 +8,7 @@ import os
 import sys
 import rq
 import shutil
+import time
 from traceback import print_exception
 from urllib import error as urlerror
 from urllib import parse as urlparse
@@ -322,3 +323,9 @@ def _create_thread(tid, data):
 
     slogger.glob.info("Founded frames {} for Data #{}".format(db_data.size, db_data.id))
     _save_task_to_db(db_task)
+
+    job = rq.get_current_job()
+    job.meta['status'] = 'Removing local copy of share...'
+    job.save_meta()
+    time.sleep(5.0)
+    # shutil.rmtree(upload_dir)
